@@ -1,29 +1,27 @@
 function isPalindrome(word) {
-  // Write your algorithm here
-  //Look at the string input and return true if the word read both backwards and forwards it is the same.
-  let letters = word.split("");
+  // Write your algorithm here => Word that is the same when read from either left or right
+  // convert each character of a word to lowerCase
+  const newWord = word.toLowerCase();
+  // Initialise the pointers, one from the beginning and the other from the end of the word
+  let left = 0;
+  let right = newWord.length - 1;
+  // Loop untill the two pointers are equal(meeting)
+  while (left < right) {
+    // If the characters are not equal, return false
+    if (newWord[left]!== newWord[right]) {
+      return false;
+    }
 
-   let backwards = ""
-   for (i= letters.length -1; i>=0; i--){
-    backwards += letters[i];
+    left++;
+    right--;
+  
 }
-
-
-
-if(word.toLowerCase() == backwards.toLowerCase()){
+  // Return true if the word is a palindrome
   return true;
 }
-else{
-  return false;
-};
-}
-
 
 /* 
   Add your pseudocode here
-  let input be a string 
-  If the word remains the same when read both backwards and forwards, then return true.
-  If it does not, return false.
 */
 
 /*
@@ -42,4 +40,4 @@ if (require.main === module) {
   console.log("=>", isPalindrome("robot"));
 }
 
-module.exports = isPali
+module.exports = isPalindrome;
