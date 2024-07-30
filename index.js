@@ -1,9 +1,29 @@
 function isPalindrome(word) {
   // Write your algorithm here
+  //Look at the string input and return true if the word read both backwards and forwards it is the same.
+  let letters = word.split("");
+
+   let backwards = ""
+   for (i= letters.length -1; i>=0; i--){
+    backwards += letters[i];
 }
+
+
+
+if(word.toLowerCase() == backwards.toLowerCase()){
+  return true;
+}
+else{
+  return false;
+};
+}
+
 
 /* 
   Add your pseudocode here
+  let input be a string 
+  If the word remains the same when read both backwards and forwards, then return true.
+  If it does not, return false.
 */
 
 /*
@@ -22,4 +42,4 @@ if (require.main === module) {
   console.log("=>", isPalindrome("robot"));
 }
 
-module.exports = isPalindrome;
+module.exports = isPali
